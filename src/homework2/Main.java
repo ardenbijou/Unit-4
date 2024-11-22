@@ -25,7 +25,21 @@ public class Main {
     }
 
     public static void vowelCounter(String str) {
+        Scanner input = new Scanner();
+        String vowels = input.nextLine();
+        int a = 0;
+        int e = 0;
+        int i = 0;
+        int o = 0;
+        int u = 0;
 
+        for(int place = 0; place < vowels.length(); place++){
+            char letter = vowels.substring(place, place);
+            switch(letter) {
+                case 'a':
+                case 'A':
+            }
+        }
     }
 
     public static void palindromeChecker(String str) {
