@@ -38,8 +38,14 @@ public class Main {
             switch(letter) {
                 case 'a':
                 case 'A':
+                    a += 1;
+                    break;
+                case 'e':
+                case 'E':
+                    e += 1;
             }
         }
+        System.out.println(a);
     }
 
     public static void palindromeChecker(String str) {
