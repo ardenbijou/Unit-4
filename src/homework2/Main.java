@@ -68,7 +68,14 @@ public class Main {
         for(int place=0; place < str.length(); place++){
             //this is where i'm attempting to add the Ec after ther fact without changing my whole code
             char ch = str.charAt(place);
-            if(ch < 'A'){
+            switch(ch){
+                case (ch < 'A'):
+                case (ch > 'Z' && ch < 'a'):
+                case (ch > 'z'):
+                    System.out.println("ERROR: invalid character detected in" + str); 
+                    break;
+                default:
+            /*if(ch < 'A'){
                 System.out.println("ERROR: invalid character detected in" + str); 
                 break;
             } else if(ch > 'Z' && ch < 'a'){
@@ -80,14 +87,15 @@ public class Main {
             } else {
                 //hopefully that's functional ???!!!!???
             String single = str.substring(place,place+1);
-            reversed = single + reversed;
-        }}
-        if(str.equals(reversed)){
-            System.out.println(str + " is a palindrome.");
-        } else {
-            System.out.println(str + " is not a palindrome.");
+            reversed = single + reversed; 
+        }} */
+                    String single = str.substring(place,place + 1);
+                    reversed = single + reversed;
+                    if(str.equals(reversed)){
+                        System.out.println(str + " is a palindrome.");
+                    } else {
+                        System.out.println(str + " is not a palindrome.");
+                    }
+            }   
         }
-
-
     }
-}
