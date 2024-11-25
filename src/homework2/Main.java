@@ -31,7 +31,7 @@ public class Main {
         int o = 0;
         int u = 0;
 
-        for(int place = 0; place < vowels.length(); place++){
+        for(int place = 0; place < str.length(); place++){
             char letter = str.charAt(place);
             switch(letter){
                 case 'a':
