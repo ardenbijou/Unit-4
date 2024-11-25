@@ -63,6 +63,18 @@ public class Main {
     System.out.println("number of u's: " + u );
 }
     public static void palindromeChecker(String str) {
+        String reversed = "";
+
+        for(int i=0; i < str.length(); i++){
+            String single = str.substring(i,i+1);
+            reversed = single + reversed;
+        }
+        if(str.equals(reversed)){
+            System.out.println(str + " is a palindrome.");
+        } else {
+            System.out.println(str + " is not a palindrome.");
+        }
+
 
     }
 }
