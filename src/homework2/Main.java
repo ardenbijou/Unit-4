@@ -65,6 +65,11 @@ public class Main {
     public static void palindromeChecker(String str) {
 
         for(int place=0; place < str.length(); place++){
+            /* I tried a couple different methods for this, I basically wanted to use a switch case, something similar to what i did for DataFun, and have the default
+               be the palindrome checker. That's, like, totally impossible though, so I went and looked up what retun actually does !!
+               So, this first for loop is just checking ascii values to make sure the rest of the code doesn't execute if there are non-alphanumeric characters in, and the second 
+               for loop does the palindrome check :)
+            */
             char ch = str.charAt(place);
             if((ch < 'A') || (ch > 'Z' && ch < 'a') || (ch > 'z')){
                 System.out.println("ERROR: invalid character detected in" + str); 
