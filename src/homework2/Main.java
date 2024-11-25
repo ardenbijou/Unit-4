@@ -65,10 +65,23 @@ public class Main {
     public static void palindromeChecker(String str) {
         String reversed = "";
 
-        for(int i=0; i < str.length(); i++){
-            String single = str.substring(i,i+1);
+        for(int place=0; place < str.length(); place++){
+            //this is where i'm attempting to add the Ec after ther fact without changing my whole code
+            char ch = str.charAt(place);
+            if(ch < 'A'){
+                System.out.println("ERROR: invalid character detected in" + str); 
+                break;
+            } else if(ch > 'Z' && ch < 'a'){
+                System.out.println("ERROR: invalid character detected in" + str);
+                break;
+            } else if(ch > 'z'){
+                System.out.println("ERROR: invalid character detected in" + str);
+                break;
+            } else {
+                //hopefully that's functional ???!!!!???
+            String single = str.substring(place,place+1);
             reversed = single + reversed;
-        }
+        }}
         if(str.equals(reversed)){
             System.out.println(str + " is a palindrome.");
         } else {
