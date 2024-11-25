@@ -63,7 +63,6 @@ public class Main {
     System.out.println("number of u's: " + u );
 }
     public static void palindromeChecker(String str) {
-        String reversed = "";
 
         for(int place=0; place < str.length(); place++){
             //this is where i'm attempting to add the Ec after ther fact without changing my whole code
@@ -73,29 +72,18 @@ public class Main {
                 case (ch > 'Z' && ch < 'a'):
                 case (ch > 'z'):
                     System.out.println("ERROR: invalid character detected in" + str); 
-                    break;
-                default:
-            /*if(ch < 'A'){
-                System.out.println("ERROR: invalid character detected in" + str); 
-                break;
-            } else if(ch > 'Z' && ch < 'a'){
-                System.out.println("ERROR: invalid character detected in" + str);
-                break;
-            } else if(ch > 'z'){
-                System.out.println("ERROR: invalid character detected in" + str);
-                break;
-            } else {
-                //hopefully that's functional ???!!!!???
-            String single = str.substring(place,place+1);
-            reversed = single + reversed; 
-        }} */
-                    String single = str.substring(place,place + 1);
-                    reversed = single + reversed;
-                    if(str.equals(reversed)){
-                        System.out.println(str + " is a palindrome.");
-                    } else {
-                        System.out.println(str + " is not a palindrome.");
-                    }
-            }   
+                    return;
+            }
         }
-    }
+        String reversed = "";
+        for(int place=0; place < str.length(); place++){           
+            String single = str.substring(place,place + 1);
+            reversed = single + reversed;
+        }
+        if(str.equals(reversed)){
+            System.out.println(str + " is a palindrome.");
+        } else {
+            System.out.println(str + " is not a palindrome.");
+        }
+    }   
+}
