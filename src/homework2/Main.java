@@ -32,17 +32,36 @@ public class Main {
         int u = 0;
 
         for(int place = 0; place < vowels.length(); place++){
-            String letter = str.substring(place, place);
-            if(letter.equals("a")){
-                a += 1;
-            } else if(letter.equals("A")){
-                a += 1;
-            } else if(letter.equals("e")){
-                e += 1;
-            } else if()
-        System.out.println(a);
+            char letter = str.charAt(place);
+            switch(letter){
+                case 'a':
+                case 'A':
+                    a += 1;
+                    break;
+                case 'e':
+                case 'E':
+                    e += 1;
+                    break;
+                case 'i':
+                case 'I':
+                    i += 1;
+                    break;
+                case 'o':
+                case 'O':
+                    o += 1;
+                    break;
+                case 'u':
+                case 'U':
+                    u += 1;
+                    break;
+            }
     }
-
+    System.out.println("number of a's: " + a );
+    System.out.println("number of e's: " + e );
+    System.out.println("number of i's: " + i );
+    System.out.println("number of o's: " + o );
+    System.out.println("number of u's: " + u );
+}
     public static void palindromeChecker(String str) {
 
     }
