@@ -1,5 +1,8 @@
 package homework1;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Unit4HW1 {
 
     public static void main(String[] args) {
@@ -20,8 +23,26 @@ public class Unit4HW1 {
      *
      */
     public static void guessingGame(){
-        //feel free to use the Random class
-        System.out.println("To be done...");
+        Random rand = new Random();
+        Scanner input = new Scanner(System.in);
+
+        int num = rand.nextInt(101);
+        System.out.println("guess the number i'm thinking of, between 1 and 100.");
+
+        System.out.print("guess the number: ");
+        int guess = input.nextInt();
+        while (guess != num) 
+        {
+            if(guess > num) {
+                System.out.println("too high! try again.");
+            }
+            if(guess < num) {
+                System.out.println("too low! try again.");
+            }
+            System.out.print("guess the number: ");
+            guess = input.nextInt();
+        }
+        System.out.println("\ncorrect! you guessed it!");
     }
 
     /**
@@ -32,7 +53,19 @@ public class Unit4HW1 {
      *
      */
     public static void tiredTurtle(){
-        System.out.println("To be done...");
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("how many steps should the turtle take in his first move? ");
+        int move = input.nextInt();
+        int total = move + 0;
+
+        while (move > 0) 
+        {
+            move /= 2;
+            total += move;
+        }
+        System.out.println("\ntotal steps taken by the turtle: " + total);
+        
     }
 
 
@@ -41,7 +74,41 @@ public class Unit4HW1 {
      * Write your own description
      */
     public static void notATamagotchi(){
-        System.out.println("To be done...");
-    }
+        Scanner input = new Scanner(System.in);
 
-}
+        int hunger = 0;
+        String feed = "";
+        boolean fed;
+        // i don't think we would've known about for loops at this point, but i think that would make more sense?
+        for (int i = 0; i <= 5; i++)
+        {
+            System.out.println("hour " + i + ": current hunger level is " + hunger);
+
+            if (hunger >= 40) 
+            {
+                System.out.println("feed your animal soon, it is unhappy.");
+
+                System.out.print("do you want to feed your pet? (yes/no): ");
+                feed = input.nextLine();
+                if (feed.equals("no"))
+                {
+                    System.out.println("end of simulation, your pet is dead.");
+                    return;
+                }
+            }
+
+            System.out.print("do you want to feed your pet? (yes/no): ");
+            feed = input.nextLine();
+            if (feed.equals("yes")) 
+            {
+                hunger -= 25;
+                if (hunger < 0) {
+                    hunger = 0;
+                }
+            } 
+            hunger += 10;
+            System.out.println();
+        }
+        System.out.print("end of simulation. your pet is content.");
+        }
+    }
